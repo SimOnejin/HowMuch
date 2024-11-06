@@ -19,7 +19,7 @@ function updateTotalPrice() {
 
   // 총 가격 업데이트
   document.getElementById("total-price").innerText = totalPrice;
-}
+
  // 총 갯수 업데이트
   document.getElementById("total-count").innerText = totalPrice;
 }
