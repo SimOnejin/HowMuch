@@ -12,7 +12,7 @@ function updateTotalPrice() {
   // 각 그릇의 가격 * 수량을 계산
   for (let plate in plateCounts) {
     const price = document.getElementById(`${plate}-price`).value;
-    const count = document.getElementByClassName(`$count`).value;
+    const count = document.getElementByClassName("count").value;
     totalPrice += plateCounts[plate] * parseInt(price, 10);
     totalCount += count;
   }
