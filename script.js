@@ -14,7 +14,7 @@ function updateTotalPrice() {
     const price = document.getElementById(`${plate}-price`).value;
     const count = document.getElementByClassName(`$count`).value;
     totalPrice += plateCounts[plate] * parseInt(price, 10);
-    totalCount += count
+    totalCount += count;
   }
 
   // 총 가격 업데이트
