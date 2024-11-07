@@ -13,8 +13,6 @@ function updateTotalPrice() {
   for (let plate in plateCounts) {
     // let count = 0;
     const price = document.getElementById(`${plate}-price`).value;
-    // count = document.getElementByClassName(count);
-    // console.log("document.getElementByClassName(count)" + document.getElementByClassName(count));
     totalPrice += plateCounts[plate] * parseInt(price, 10);
     // totalCount += count;
   }
@@ -28,9 +26,6 @@ function updateTotalPrice() {
 
   // 총 가격 업데이트
   document.getElementById("total-price").innerText = totalPrice;
-
- // 총 갯수 업데이트
-  // document.getElementById("total-count").innerText = totalCount;
 }
 
 // 수량 증가 함수
