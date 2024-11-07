@@ -14,6 +14,7 @@ function updateTotalPrice() {
     let count = 0;
     const price = document.getElementById(`${plate}-price`).value;
     count = document.getElementByClassName("count").value;
+    console.log("document.getElementByClassName("count").value" + document.getElementByClassName("count").value);
     totalPrice += plateCounts[plate] * parseInt(price, 10);
     totalCount += count;
   }
