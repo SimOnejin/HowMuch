@@ -11,17 +11,18 @@ function updateTotalPrice() {
 
   // 각 그릇의 가격 * 수량을 계산
   for (let plate in plateCounts) {
+    let count = 0;
     const price = document.getElementById(`${plate}-price`).value;
-    // const count = document.getElementByClassName("count").value;
+    count = document.getElementByClassName("count").value;
     totalPrice += plateCounts[plate] * parseInt(price, 10);
-    // totalCount += count;
+    totalCount += count;
   }
 
   // 총 가격 업데이트
   document.getElementById("total-price").innerText = totalPrice;
 
  // 총 갯수 업데이트
-  // document.getElementById("total-count").innerText = totalPrice;
+  document.getElementById("total-count").innerText = totalCount;
 }
 
 // 수량 증가 함수
