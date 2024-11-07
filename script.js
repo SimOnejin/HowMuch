@@ -19,7 +19,7 @@ function updateTotalPrice() {
     // totalCount += count;
   }
 
-  const elements = document.querySelectorAll('plate');
+  const elements = document.querySelectorAll('.plate');
   
   for (let count in elements){
     console.log("count: " + count);
