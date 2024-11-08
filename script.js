@@ -3,6 +3,9 @@ let plateCounts = {
   blue: 0,
   red: 0,
 };
+
+let totalCount = 0;
+
 // 가격 업데이트 함수
 function updateTotalPrice() {
   let totalPrice = 0;
@@ -13,11 +16,13 @@ function updateTotalPrice() {
   }
   // 총 가격 업데이트
   document.getElementById("total-price").innerText = totalPrice;
+  document.getElementById("total-count").innerText = totalCount;
 }
 // 수량 증가 함수
 function increment(plate) {
   plateCounts[plate]++;
   document.getElementById(`${plate}-count`).innerText = plateCounts[plate];
+  totalCount++;
   updateTotalPrice();
 }
 // 수량 감소 함수
@@ -25,6 +30,7 @@ function decrement(plate) {
   if (plateCounts[plate] > 0) {
     plateCounts[plate]--;
     document.getElementById(`${plate}-count`).innerText = plateCounts[plate];
+    totalCount--;
     updateTotalPrice();
   }
 }
