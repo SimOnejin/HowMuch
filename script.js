@@ -71,3 +71,7 @@ const myInput = document.getElementById("myInput");
 myModal.addEventListener("shown.bs.modal", () => {
   myInput.focus();
 });
+
+function darkMode(){
+  document.getElementById('body').classList.toggle('darkmode');
+}
