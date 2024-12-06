@@ -1,0 +1,9 @@
+{
+    "title" : "回転寿司価格電卓",
+    "currencyUnit" :  "円",
+    "subTitle": "新しい価格追加",
+    "addButton": "追加する",
+    "totalCount": "会: ",
+    "totalPrices": "お会計: ",
+    "placeholder": "価格（円）"
+}

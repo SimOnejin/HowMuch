@@ -1,0 +1,15 @@
+{
+    "short_name": "価格電卓",
+    "name": "回転寿司価格電卓",
+    "icons": [
+      {
+        "src": "./src/img/calculator.png",
+        "type": "image/png"
+      }
+    ],
+    "start_url": "/index.html",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#000000"
+  }
+  

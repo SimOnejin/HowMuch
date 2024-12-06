@@ -13,8 +13,8 @@ function createPlateElement(plateName, platePrice) {
   newPlateDiv.setAttribute("data-plate", plateName);
   newPlateDiv.innerHTML = `
     <div class="input-group">
-      <input type="number" id="${plateName}-price" value="${platePrice}" class="form-control" min="0">
-      <span class="input-group-text">円</span>
+      <input type="number" id="${plateName}-price" value="${platePrice}"class="form-control" min="0">
+      <span data-key="currencyUnit" class="input-group-text currencyUnit">円</span>
     </div>
     <div class="glow">
       <button class="btn btn-outline-danger" onclick="decrement('${plateName}')">-</button>
@@ -66,6 +66,7 @@ function addNewPlate() {
   plateContainer.appendChild(createPlateElement(plateName, platePrice));
   plateCounts[plateName] = 0;
   document.getElementById("new-plate-prices").value = "";
+  loadLanguage();
   updateTotalPrice();
 }
 
@@ -109,7 +110,8 @@ function loadData() {
       countElement.innerText = plateCounts[plate];
     }
   });
-
+  
+  loadLanguage();
   updateTotalPrice();
 }
 
@@ -125,3 +127,32 @@ function resetSave() {
 function darkMode() {
   document.getElementById("body").classList.toggle("darkmode");
 }
+
+//serviceWorker
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/service-worker.js')
+    .then(() => console.log('Service Worker registered!'));
+}
+
+let deferredPrompt;
+
+window.addEventListener('beforeinstallprompt', (e) => {
+  e.preventDefault();
+  deferredPrompt = e; // 이벤트 저장
+  document.getElementById('install-button').style.display = 'block'; // 버튼 표시
+});
+
+document.getElementById('install-button').addEventListener('click', () => {
+  if (deferredPrompt) {
+    deferredPrompt.prompt(); // 설치 대화 상자 표시
+    deferredPrompt.userChoice.then((choiceResult) => {
+      if (choiceResult.outcome === 'accepted') {
+        console.log('PWA 설치됨');
+      } else {
+        console.log('PWA 설치 취소됨');
+      }
+      deferredPrompt = null; // 초기화
+    });
+  }
+});
+

@@ -1,0 +1,9 @@
+{
+    "title" : "회전초밥 가격 계산기",
+    "currencyUnit" :  "엔",
+    "subTitle": "새로운 가격 추가",
+    "addButton": "추가하기",
+    "totalCount": "합: ",
+    "totalPrices": "합계: ",
+    "placeholder": "가격(엔)"
+}
