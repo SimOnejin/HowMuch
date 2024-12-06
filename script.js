@@ -142,17 +142,25 @@ window.addEventListener('beforeinstallprompt', (e) => {
   document.getElementById('install-button').style.display = 'block'; // 버튼 표시
 });
 
-document.getElementById('install-button').addEventListener('click', () => {
-  if (deferredPrompt) {
-    deferredPrompt.prompt(); // 설치 대화 상자 표시
-    deferredPrompt.userChoice.then((choiceResult) => {
-      if (choiceResult.outcome === 'accepted') {
-        console.log('PWA 설치됨');
-      } else {
-        console.log('PWA 설치 취소됨');
+document.addEventListener('DOMContentLoaded', () => {
+  const installButton = document.getElementById('install-button');
+  if (installButton) {
+    installButton.addEventListener('click', () => {
+      if (deferredPrompt) {
+        deferredPrompt.prompt();
+        deferredPrompt.userChoice.then((choiceResult) => {
+          if (choiceResult.outcome === 'accepted') {
+            console.log('PWA 설치됨');
+          } else {
+            console.log('PWA 설치 취소됨');
+          }
+          deferredPrompt = null;
+        });
       }
-      deferredPrompt = null; // 초기화
     });
+  } else {
+    console.error("Install button not found in DOM");
   }
 });
+
 
