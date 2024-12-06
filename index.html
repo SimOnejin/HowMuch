@@ -58,12 +58,13 @@
         .menuBar{
           position: fixed;
           /* margin-top: 30% */
-          left: 9%;
+          left: 5%;
           bottom: 6%;
-            &td::before{
-          }
+            
         }
-        
+        td button i::before{
+              margin-left: 70%;
+          }
         .darkBtn{
           /* position: fixed; */
           /* margin-top: 30% */
@@ -187,14 +188,14 @@
   </td>
   
   <td>
-    <button type="button" class="translateBtn" style="margin-left: 50%; background-color: #00000000; border: #00000000; border-shadow: unset;" onclick="toggleLanguage()">
+    <button type="button" class="translateBtn" style="background-color: #00000000; border: #00000000; border-shadow: unset;" onclick="toggleLanguage()">
       <i class="bi bi-translate"></i>
       <script src="language.js"></script>
     </button>
   </td>
 
   <td>
-    <button id="install-button" class="btn install" style="margin-left: 70%; background-color: #00000000; border: #00000000; border-shadow: unset;" ><i class="bi bi-box-arrow-in-down"></i></button>
+    <button id="install-button" class="btn install" style="background-color: #00000000; border: #00000000; border-shadow: unset; display: none;" ><i class="bi bi-box-arrow-in-down"></i></button>
   </td>
 </table>
 
