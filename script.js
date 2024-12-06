@@ -130,7 +130,7 @@ function darkMode() {
 
 //serviceWorker
 if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/simonejin.github.io/service-worker.js')
+  navigator.serviceWorker.register('/simonejin.github.io/HowMuch/service-worker.js')
   .then(() => console.log('Service Worker registered!'));
 }
 
