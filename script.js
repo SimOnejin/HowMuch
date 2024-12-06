@@ -163,4 +163,5 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
+document.documentElement.requestFullscreen();
 
