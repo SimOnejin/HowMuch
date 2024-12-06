@@ -126,6 +126,7 @@ function resetSave() {
 // 다크모드
 function darkMode() {
   document.getElementById("body").classList.toggle("darkmode");
+  document.getElementsByTagName("header")[0].classList.toggle("darkmode");
   document.getElementsByTagName("html")[0].classList.toggle("darkmode");
 }
 
