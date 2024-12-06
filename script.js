@@ -130,8 +130,8 @@ function darkMode() {
 
 //serviceWorker
 if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/service-worker.js')
-    .then(() => console.log('Service Worker registered!'));
+  navigator.serviceWorker.register('/simonejin.github.io/service-worker.js')
+  .then(() => console.log('Service Worker registered!'));
 }
 
 let deferredPrompt;
