@@ -166,4 +166,6 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 document.documentElement.requestFullscreen();
+window.scrollTo(0, 1);
+
 
