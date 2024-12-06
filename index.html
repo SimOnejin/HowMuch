@@ -4,6 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+     <!-- iOS 상태 바 스타일 -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="white-translucent">
+    <!-- Android 브라우저 및 PWA 상태 바 색상 -->
+    <meta name="theme-color" content="#ffffff">
+
     <title>How Much</title>
     <link rel="stylesheet" href="./style.scss"/>
     <link rel="icon" href="./src/img/calculator.png" type="image/x-icon">
@@ -11,9 +17,15 @@
     <style>
         body{
             touch-action: manipulation;
-            padding-bottom: 300px !important;
+            padding-bottom: 400px !important;
             margin: 0;
             padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+            background-color: white;
+            transition: background-color 0.3s ease;
+        }
+        header {
+          padding-top: env(safe-area-inset-top); /* 상태 바 높이를 고려한 패딩 */
+          background-color: #ffffff00;
         }
         .plate{
             display: flex !important;
@@ -90,10 +102,6 @@
         }
         .darkmode{
           background-color: rgb(49, 49, 49);
-          transition: background-color 0.3s ease;
-        }
-        body{
-          background-color: white;
           transition: background-color 0.3s ease;
         }
         .bi-moon-stars{
