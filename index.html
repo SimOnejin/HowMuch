@@ -55,24 +55,34 @@
             right: 8%;
             bottom: 5%;
         } 
-        .darkBtn{
+        .menuBar{
           position: fixed;
           /* margin-top: 30% */
           left: 9%;
-          bottom: 5.5%;
+          bottom: 6%;
+            &td::before{
+          }
+        }
+        
+        .darkBtn{
+          /* position: fixed; */
+          /* margin-top: 30% */
+          /* left: 9%;
+          bottom: 5.5%; */
         }
         .translateBtn{
-          position: fixed;
+          /* position: fixed; */
           /* margin-top: 30% */
-          left: 22%;
-          bottom: 6%;
+          /* left: 22%;
+          bottom: 6%; */
+          color: black;
           transform: scale(2);
         }
         .install{
-          position: fixed;
+          /* position: fixed;
           left: 31%;
           bottom: 5.5%;
-          width: 16px;
+          width: 16px; */
           transform: scale(2);
         }
         .darkmode{
@@ -91,7 +101,7 @@
           transform: scale(2);
         }
         .darkmode{
-          div, h1, h2, h5, .bi-moon-stars, .translateBtn{
+          div, h1, h2, h5, .bi-moon-stars, .translateBtn, .install{
              color: #ffffff;
           }
         }
@@ -169,19 +179,31 @@
       <!-- 총 갯수 표시 -->
 <!--       <h4 style="margin-top: 5%;">umm.会: <span id="total-count">0</span></h4> -->
 
+<table class="menuBar">
+  <td>
+    <button type="button" class="btn btn-secondary darkBtn" style=" background-color: #00000000; border: #00000000; border-shadow: unset;" onclick="darkMode()">
+      <i class="bi bi-moon-stars"></i>
+    </button>
+  </td>
+  
+  <td>
+    <button type="button" class="translateBtn" style="margin-left: 50%; background-color: #00000000; border: #00000000; border-shadow: unset;" onclick="toggleLanguage()">
+      <i class="bi bi-translate"></i>
+      <script src="language.js"></script>
+    </button>
+  </td>
 
-<button type="button" class="btn btn-secondary darkBtn" style=" background-color: #00000000; border: #00000000; border-shadow: unset;" onclick="darkMode()">
-  <i class="bi bi-moon-stars"></i>
-</button>
-<button type="button" class="translateBtn" style=" background-color: #00000000; border: #00000000; border-shadow: unset;" onclick="toggleLanguage()">
-  <i class="bi bi-translate"></i>
-  <script src="language.js"></script>
-</button>
+  <td>
+    <button id="install-button" class="btn install" style="margin-left: 70%; background-color: #00000000; border: #00000000; border-shadow: unset;" ><i class="bi bi-box-arrow-in-down"></i></button>
+  </td>
+</table>
+
+
+
 
 
 <button onclick="loadData()" class="btn btn-light saveLoad"><i class="bi bi-arrow-clockwise"></i> Save Load</button>
 <button onclick="resetSave()" class="btn btn-light reset"><i class="bi bi-trash3"></i> Reset</button>
-<button id="install-button" class="btn install" style=" background-color: #00000000; border: #00000000; border-shadow: unset;" ><i class="bi bi-box-arrow-in-down"></i></button>
 
 
 <!-- Button trigger modal -->
